@@ -1,0 +1,204 @@
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  .lds-ring {
+    color: #1c4c5b;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+    div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border: 8px solid currentColor;
+      border-radius: 50%;
+      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: currentColor transparent transparent transparent;
+    }
+
+    div:nth-child(1) {
+      animation-delay: -0.6s;
+    }
+
+    div:nth-child(2) {
+      animation-delay: -0.4s;
+    }
+
+    div:nth-child(3) {
+      animation-delay: -0.2s;
+    }
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.hero {
+  width: 100%;
+  height: 100%;
+  background: #0009;
+  display: flex;
+  justify-content: center;
+
+
+  .hero__wrapper {
+    width: 100%;
+
+    .link {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding-top: 40px;
+      text-transform: uppercase;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .hero__context {
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+
+    .card {
+      background-color: #0009;
+      border-radius: 30px;
+      color: white;
+      overflow: hidden;
+      text-align: center;
+      width: 27%;
+      box-shadow: 0px 0px 2px #000;
+      margin: 0 10px;
+
+      img {
+        width: 100%;
+      }
+
+      h3 {
+        margin: 15px 0 5px 0;
+        color: #0092CC;
+        font-size: 25px;
+      }
+
+      p {
+        padding: 0 15px;
+      }
+
+      button {
+        background-color: #CC3333;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        margin: 15px;
+        padding: 10px 20px;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: #822020;
+          transform: scale(.95);
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .prev, .next {
+    background-color: #CC3333;
+    border: none;
+    color: #000;
+    cursor: pointer;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    text-align: center;
+    // top: 50%;
+    // transform: translateY(-50%);
+    z-index: 1;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: #822020;
+    }
+    &:active{
+      transform: scale(.9);
+    }
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #0009;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    background: #CC3333;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #0007;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+
+    .close {
+      color: #0009;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+
+      &:hover,
+      &:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
